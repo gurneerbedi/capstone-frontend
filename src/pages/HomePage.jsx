@@ -11,7 +11,7 @@ function HomePage() {
             <div className="homepage__header">
                 <h1 className="homepage__title">StoryWave</h1>
                 <p className="homepage__slogan">
-                    A good story starts with *you.*
+                    A good story starts with you.
                 </p>
             </div>
             <section className="homepage__carousel">
