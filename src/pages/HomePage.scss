@@ -1,0 +1,104 @@
+@use "../assets/partials/global" as *;
+@use "../assets/partials/typography" as *;
+@use "../assets/partials/fonts" as *;
+@use "../assets/partials/variables" as *;
+@use "../assets/partials/mixins" as *;
+
+.homepage {
+    background-color: $StoryWave-White;
+    overflow: hidden;
+    color: $StoryWave-Grey;
+    position: relative;
+
+    &__header {
+        position: relative;
+        background-color: $StoryWave-Purple;
+        padding: 4rem 2rem;
+        text-align: center;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        overflow: hidden;
+
+        &__background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+
+            .wave {
+                position: absolute;
+                width: 200%;
+                height: 150px;
+                opacity: 1;
+                background: rgba(0, 0, 255, 0.5);
+            }
+        }
+
+        &__title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: $StoryWave-Navy;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        &__slogan {
+            font-size: 1.5rem;
+            margin: 0 0 2rem;
+            color: $StoryWave-Blue;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        &__actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+
+            .homepage__button {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                transition: transform 0.3s ease, background-color 0.3s ease;
+
+                &--primary {
+                    background-color: $StoryWave-Blue;
+                    color: $StoryWave-White;
+
+                    &:hover {
+                        background-color: darken($StoryWave-Blue, 10%);
+                        transform: scale(1.1) rotate(-3deg);
+                    }
+                }
+
+                &--secondary {
+                    background-color: $StoryWave-Navy;
+                    color: $StoryWave-White;
+
+                    &:hover {
+                        background-color: lighten($StoryWave-Navy, 10%);
+                        transform: scale(1.1) rotate(3deg);
+                    }
+                }
+            }
+        }
+    }
+
+    &__carousel {
+        padding: 2rem;
+        background-color: lighten($StoryWave-Purple, 40%);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 0 1rem;
+
+        &-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: $StoryWave-Navy;
+            animation: fadeIn 1.5s ease-out;
+        }
+    }
+}

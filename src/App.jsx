@@ -1,15 +1,20 @@
 import React from "react";
-import BestsellerCarousel from "./components/bestsellers/bestsellercarousel.jsx";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import DiscoverPage from "./pages/DiscoverPage";
 
 
-function App() {
+const App = ()  =>{
+return (
+    <Router>
+        <Routes>
+            <Route path="/" element={<HomePage />}></Route>
+            <Route path="/login" element={<LoginPage />}></Route>
+            <Route path="/discover" element={<DiscoverPage />}></Route>
+        </Routes>
+    </Router>
+);
+};
 
-
-  return (
-    <>
-     <BestsellerCarousel/>
-    </>
-  )
-}
-
-export default App
+export default App;

@@ -1,0 +1,67 @@
+/*Type Kit*/
+//Desktop + Tablet
+@mixin page-header {
+    font-size: 2.063rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+}
+
+@mixin section-header{
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    
+}
+
+@mixin sub-header{
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 700;
+}
+
+@mixin body {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+}
+
+
+@mixin buttons-labels{
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700; 
+    
+}
+
+/*Mobile Type Kit*/
+@mixin mobile__page-header { 
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+
+@mixin mobile__section-header{
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    
+}
+
+@mixin mobile__sub-header{
+    font-size: 0.813rem;
+    line-height: 1.125rem;
+    font-weight: 700;
+}
+
+@mixin mobile__body {
+    font-size: 0.813rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+}
+
+@mixin mobile__buttons-labels{
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700; 
+    
+}

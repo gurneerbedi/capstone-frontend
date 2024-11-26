@@ -3,6 +3,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import axios from "axios";
+import { FaChevronLeft, FaChevronRight} from "react-icons/fa";
+import "./bestsellercarousel.scss";
 
 const BestsellerCarousel = () => {
     const [books, setBooks] = useState([]);
@@ -21,7 +23,6 @@ const BestsellerCarousel = () => {
                         response.data
                     );
                 }
-                // setBooks(response.data.books);
             } catch (error) {
                 setError(error.message);
                 console.error("Error fetching trending books", error);
@@ -37,6 +38,8 @@ const BestsellerCarousel = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
+        nextArrow: <FaChevronRight className = "next-arrow"/>,
+        prevArrow: <FaChevronLeft className = "prev-arrow"/>,
         responsive: [
             {
                 breakpoint: 1024,
