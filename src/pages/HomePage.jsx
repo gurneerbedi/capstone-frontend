@@ -4,13 +4,14 @@ import Bestsellercarousel from "../components/bestsellers/Bestsellercarousel";
 import NavBar from "../components/navbar/NavBar";
 import "./HomePage.scss";
 import heroVideo from "../assets/Images/hero.mp4";
+import LogoImage from "../assets/Images/StoryWaveLogo.jpg"
 
 function HomePage() {
     return (
         <div className="homepage">
             <NavBar />
             <div className="homepage__header">
-                <h1 className="homepage__title">StoryWave</h1>
+                <h1 className="homepage__title"><img className = "homepage__logoimg" src={LogoImage} alt="storywavelogo"/></h1>
                 <p className="homepage__slogan">
                     Because the right story starts with you
                 </p>

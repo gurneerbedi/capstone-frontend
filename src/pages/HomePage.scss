@@ -4,8 +4,17 @@
 @use "../assets/partials/variables" as *;
 @use "../assets/partials/mixins" as *;
 
+body{
+    margin: 0;
+    padding: 0;
+}
 .homepage {
-    background-color: $StoryWave-White;
+    &__logoimg{
+        height: auto;
+        width: 15rem;
+        border: 4px solid rgba(118,118,116,1);
+    }
+    
     overflow: hidden;
     position: relative;
 
@@ -14,8 +23,7 @@
         background-color: rgba(246,240,234,1);
         padding: 4rem 2rem;
         text-align: center;
-        //clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        //overflow: hidden;
+        
 
         &__background {
             position: absolute;
@@ -43,7 +51,7 @@
         }
 
         &__slogan {
-            font-size: 1.5rem;
+            font-size: 3.125rem;
             margin: 0 0 2rem;
             color: rgba(118,118,116,1);
             animation: fadeIn 1.5s ease-out;
@@ -104,5 +112,13 @@
 
     &__footer{
         text-align: center;
+    }
+
+    &__hero-video{
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        object-position: 50% 50%;
+
     }
 }

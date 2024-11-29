@@ -1,13 +1,15 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import "./NavBar.scss";
+import LogoImg from "../../assets/Images/StoryWaveLogo.jpg";
 
 const NavBar = () => {
     return (
         <nav className="navbar">
             <div className="navbar__logo">
                 <Link to="/" className="navbar__link">
-                    <h1>StoryWave</h1>
+                Logo here: StoryWave
+                    {/* <img src={LogoImg} alt="LogoImage" /> */}
                 </Link>
             </div>
             <ul className="navbar__menu">
