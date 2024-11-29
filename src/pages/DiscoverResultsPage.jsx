@@ -25,7 +25,7 @@ const DiscoverResultsPage = () => {
                         books,
                     }
                 );
-                console.log("Books with description:", response.data)
+                console.log("Books with description:", response.data);
                 setUpdatedBooks(response.data);
             } catch (error) {
                 console.error("Error fetching book descriptions:", error);
@@ -42,23 +42,25 @@ const DiscoverResultsPage = () => {
             <h2>Books Matching Your Mood</h2>
             <div className="books-list">
                 {updatedBooks.length === 0 ? (
-                <p>No books found matching the selected moods.</p>) : (
-                <ul>
-                    {updatedBooks.map((book, index) => (
-                        <li key={index} className="book-item">
-                            <img
-                                src={
-                                    book.imageUrl || "bookimageplaceholder.jpg"
-                                }
-                                alt={book.Title}
-                                className="book-cover"
-                            />
-                            <h3>{book.Title}</h3>
-                            <p>{book.Author}</p>
-                            {/* <p>{book.description}</p> */}
-                        </li>
-                    ))}
-                </ul>
+                    <p>No books found matching the selected moods.</p>
+                ) : (
+                    <ul>
+                        {updatedBooks.map((book, index) => (
+                            <li key={index} className="book-item">
+                                <img
+                                    src={
+                                        book.imageUrl ||
+                                        "bookimageplaceholder.jpg"
+                                    }
+                                    alt={book.Title}
+                                    className="book-cover"
+                                />
+                                <h3>{book.Title}</h3>
+                                <p>{book.Author}</p>
+                                {/* <p>{book.description}</p> */}
+                            </li>
+                        ))}
+                    </ul>
                 )}
             </div>
         </div>
