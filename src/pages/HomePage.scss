@@ -7,16 +7,15 @@
 .homepage {
     background-color: $StoryWave-White;
     overflow: hidden;
-    color: $StoryWave-Grey;
     position: relative;
 
     &__header {
         position: relative;
-        background-color: $StoryWave-Purple;
+        background-color: rgba(246,240,234,1);
         padding: 4rem 2rem;
         text-align: center;
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        overflow: hidden;
+        //clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        //overflow: hidden;
 
         &__background {
             position: absolute;
@@ -38,7 +37,7 @@
         &__title {
             font-size: 3rem;
             font-weight: bold;
-            color: $StoryWave-Navy;
+            color: rgba(118,118,116,1);
             margin-bottom: 1rem;
             animation: fadeIn 1s ease-out;
         }
@@ -46,7 +45,7 @@
         &__slogan {
             font-size: 1.5rem;
             margin: 0 0 2rem;
-            color: $StoryWave-Blue;
+            color: rgba(118,118,116,1);
             animation: fadeIn 1.5s ease-out;
         }
 
@@ -84,11 +83,12 @@
                 }
             }
         }
+      
     }
 
     &__carousel {
         padding: 2rem;
-        background-color: lighten($StoryWave-Purple, 40%);
+        background-color: rgba(246,240,234,1);
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         margin: 0 1rem;
@@ -100,5 +100,9 @@
             color: $StoryWave-Navy;
             animation: fadeIn 1.5s ease-out;
         }
+    }
+
+    &__footer{
+        text-align: center;
     }
 }

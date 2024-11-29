@@ -57,7 +57,7 @@ const BestsellerCarousel = () => {
     };
     return (
         <div className="carousel-container">
-            <h2>Trending Books</h2>
+            <h2>What Everyone Is Reading Now</h2>
             {loading ? (
                 <p>Loading books...</p>
             ) : error ? (

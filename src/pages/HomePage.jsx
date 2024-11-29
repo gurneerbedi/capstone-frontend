@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Bestsellercarousel from "../components/bestsellers/Bestsellercarousel";
 import NavBar from "../components/navbar/NavBar";
 import "./HomePage.scss";
+import heroVideo from "../assets/Images/hero.mp4";
 
 function HomePage() {
     return (
@@ -11,15 +12,28 @@ function HomePage() {
             <div className="homepage__header">
                 <h1 className="homepage__title">StoryWave</h1>
                 <p className="homepage__slogan">
-                    A good story starts with *you.*
+                    Because the right story starts with you
                 </p>
             </div>
+            <div className="homepage-hero">
+                <video
+                    className="homepage__hero-video"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                >
+                    <source src={heroVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <h1 className="homepage-hero__title"></h1>
+            </div>
             <section className="homepage__carousel">
-                <h2 className="homepage__carousel-title">
-                    add text here later
-                </h2>
                 <Bestsellercarousel />
             </section>
+            <footer className="homepage__footer">
+                <p>© 2024 StoryWave. All rights reserved.</p>
+            </footer>
         </div>
     );
 }
