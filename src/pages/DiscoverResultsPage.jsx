@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import "./DiscoverResultsPage.scss";
 import { useState } from "react";
 import axios from "axios";
+import BookCover from "../assets/Images/BookPlaceholder.jpg";
 
 const DiscoverResultsPage = () => {
     const location = useLocation();
@@ -39,7 +40,7 @@ const DiscoverResultsPage = () => {
 
     return (
         <div className="discover-results-container">
-            <h2>Books Matching Your Mood</h2>
+            <h2>Read Between the Moods</h2>
             <div className="books-list">
                 {updatedBooks.length === 0 ? (
                     <p>No books found matching the selected moods.</p>
@@ -48,10 +49,7 @@ const DiscoverResultsPage = () => {
                         {updatedBooks.map((book, index) => (
                             <li key={index} className="book-item">
                                 <img
-                                    src={
-                                        book.imageUrl ||
-                                        "bookimageplaceholder.jpg"
-                                    }
+                                    src={ BookCover}
                                     alt={book.Title}
                                     className="book-cover"
                                 />

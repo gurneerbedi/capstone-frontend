@@ -8,8 +8,7 @@ const NavBar = () => {
         <nav className="navbar">
             <div className="navbar__logo">
                 <Link to="/" className="navbar__link">
-                Logo here: StoryWave
-                    {/* <img src={LogoImg} alt="LogoImage" /> */}
+                    <img src={LogoImg} alt="LogoImage" />
                 </Link>
             </div>
             <ul className="navbar__menu">
