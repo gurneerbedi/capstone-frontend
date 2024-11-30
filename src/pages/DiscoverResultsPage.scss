@@ -1,44 +1,35 @@
-// @use "../assets/partials/global" as *;
-// @use "../assets/partials/typography" as *;
-// @use "../assets/partials/fonts" as *;
-// @use "../assets/partials/variables" as *;
-// @use "../assets/partials/mixins" as *;
+@use "../assets/partials/global" as *;
+@use "../assets/partials/typography" as *;
+@use "../assets/partials/fonts" as *;
+@use "../assets/partials/variables" as *;
+@use "../assets/partials/mixins" as *;
 
-// .discover-results-container {
-//     padding: 20px;
-//     background-color: #f9f9f9;
-// }
-// .books-list {
-//     display: grid;
-//     grid-template-columns: 1fr;
-//     gap: 20px;
-//     justify-content: center;
+.discover-results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
 
-//     @include tablet {
-//         grid-template-columns: repeat(2, 1fr);
-//     }
-// }
+    &__title{
+        color: $StoryWave-Brown;
+        margin-top: 2rem 2rem;
+        @include mobile__page-header;
 
-// .book-item {
-//     background-color: white;
-//     border: 1px solid #ddd;
-//     padding: 10px;
-//     border-radius: 8px;
-//     width: 100%;
-//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-// }
+        @include tablet{
+            @include page-header;
+        }
+    }
+}
+.books-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    align-items: center;
+    gap: 4.15rem;
 
-// .book-cover {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     border-radius: 8px;
-// }
-// .book-item h3 {
-//     margin-top: 10px;
-//     font-size: 18px;
-// }
-// .book-item p {
-//     color: #555;
-//     font-size: 14px;
-// }
+    @include tablet {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
