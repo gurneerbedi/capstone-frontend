@@ -4,7 +4,10 @@
 @use "../../assets/partials/variables" as *;
 @use "../../assets/partials/mixins" as *;
 
-
+.book-card-link{
+  all: unset;
+  text-decoration: none;
+}
 
 .book-card {
   display: flex;
