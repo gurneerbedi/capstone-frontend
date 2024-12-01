@@ -34,7 +34,7 @@ const LoginPage = () => {
                 : "http://localhost:3001/api/register";
             const response = await axios.post(endpoint, { email, password });
 
-            localStorage.setItem("token", response.data.token); // Store JWT token
+            localStorage.setItem("user", JSON.stringify({token: response.data.token, email})); 
             navigate("/reading-tracker");
         } catch (err) {
             console.error(

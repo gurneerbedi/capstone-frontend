@@ -7,7 +7,7 @@ import NavBar from "../components/navbar/NavBar";
 function DiscoverResultsPage() {
     const location = useLocation();
     const books = location.state?.books || [];
-
+    const user = JSON.parse(localStorage.getItem("user"));
     console.log("Books:", books);
 
     return (
@@ -19,7 +19,7 @@ function DiscoverResultsPage() {
                     <p>No books found matching the selected moods.</p>
                 ) : (
                     books.map((book, index) => (
-                        <BookCard key={index} book={book} />
+                        <BookCard key={index} book={book} user ={user} />
                     ))
                 )}
             </div>

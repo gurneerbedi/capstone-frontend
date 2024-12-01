@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Abstractbackground from "../assets/images/abstract2.jpg";
 import axios from "axios";
 import NavBar from "../components/navbar/NavBar"
+import AddToTrackerButton from "../components/AddToTrackerButton/AddToTrackerButton";
 import {
     FaHeart,
     FaSmile,
