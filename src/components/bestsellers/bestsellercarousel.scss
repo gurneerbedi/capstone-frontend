@@ -6,23 +6,28 @@
 
 .carousel-container {
     padding: 2rem 1rem;
-    max-width: 1200px;
     margin: 0 auto;
-    background-color: rgba(246,240,234,1); //#f6f0ea
+    background-color: rgba(246,240,234,1);
+
 
     h2 {
-        font-size: 3.25rem;
-        line-height: 1.2em;
+        @include mobile__page-header;
         text-align: center;
         font-weight: bold;
         color: $StoryWave-Brown;
+
+        @include tablet{
+        font-size: 3rem;
+        line-height: 1.2em;
+        }
+        
     }
 
     .slick-slider {
         .slick-prev,
         .slick-next {
             font-size: 20px;
-            color: $StoryWave-Grey;
+            color: $StoryWave-Brown;
             z-index: 1;
         }
 
@@ -35,9 +40,13 @@
         }
 
         .slick-dots {
-            bottom: -40px;
+            bottom: -3rem;
+            //margin-bottom: 1rem;
+            
+          
+    
             li button {
-                background-color: $StoryWave-Grey;
+                background-color: $StoryWave-Brown;
                 border-radius: 50%;
                 width: 12px;
                 height: 12px;
@@ -48,7 +57,7 @@
             }
 
             li.slick-active button {
-                background-color: $StoryWave-Blue;
+                background-color: $StoryWave-Orange;
             }
         }
         .slick-track {
@@ -58,20 +67,18 @@
     }
 
     .book-card {
-        // background: #fff;
         border-radius: 10px;
         overflow: hidden;
-        //box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         position: relative;
-        margin: 0 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        
 
         &:hover {
             transform: translateY(-10px);
-            // box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+             box-shadow: 0 10px 15px $StoryWave-Brown;
         }
 
         .book-image {
@@ -80,25 +87,26 @@
             object-fit: contain;
             border-radius: 8px;
             transition: transform 0.3s ease;
+            padding-top: 1rem;
         }
 
         .book-title {
             font-size: 1.1rem;
             font-weight: bold;
-            color: $StoryWave-Navy;
+            color: $StoryWave-Brown;
             margin: 0.5rem 0;
             text-align: center;
         }
 
         .book-author {
             font-size: 0.875rem;
-            color: $StoryWave-Blue;
+            color: $StoryWave-LightBrown;
             margin-bottom: 1rem;
             text-align: center;
         }
     }
 
-    @media (max-width: 1024px) {
+    @include desktop {
         .slick-slider {
             .slick-prev,
             .slick-next {
@@ -116,7 +124,7 @@
         }
     }
 
-    @media (max-width: 600px) {
+    @include tablet {
         .slick-slider {
             .slick-prev,
             .slick-next {
