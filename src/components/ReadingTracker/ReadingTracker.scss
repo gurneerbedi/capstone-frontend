@@ -1,0 +1,92 @@
+@use "../../assets/partials/global" as *;
+@use "../../assets/partials/typography" as *;
+@use "../../assets/partials/fonts" as *;
+@use "../../assets/partials/variables" as *;
+@use "../../assets/partials/mixins" as *;
+.reading-tracker {
+    padding: 2rem;
+    background-color: $StoryWave-Beige;
+    &__item{
+        background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+
+            &:hover {
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            }
+        
+    }
+    
+    &__title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+       color: $StoryWave-Brown;
+    }
+
+    &__error {
+        color: red;
+        margin-bottom: 1rem;
+    }
+
+        &__book-title {
+            font-size: 1.25rem;
+            margin: 0 0 0.5rem;
+            color: $StoryWave-Brown;
+          
+        }
+
+        &__book-author {
+            margin: 0 0 0.5rem;
+            color: $StoryWave-Brown;
+        }
+    
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    
+}
+.reading-tracker__thumbnail{
+    width: 10rem;
+    height: 15.625rem;
+    border-radius: 1.25rem;
+}
+    .reading-tracker__btn {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: 1px solid $StoryWave-Brown;
+            border-radius: 4px;
+            height: 3rem;
+            width: 10rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:first-child {
+                background-color: $StoryWave-Orange;
+                color: white;
+
+                &:hover {
+                    background-color: #45a047;
+                }
+            }
+
+            &:last-child {
+                background-color: #f44336;
+                color: #fff;
+
+                &:hover {
+                    background-color: #e53920;
+                }
+            
+        }
+    }
