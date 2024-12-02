@@ -7,8 +7,7 @@ const NavBar = () => {
     const navigate = useNavigate();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    // Mocked user check - replace with actual authentication logic
-    const user = localStorage.getItem("user"); // Assuming you store user data in localStorage
+    const user = localStorage.getItem("user"); 
 
     const handleLogout = () => {
         localStorage.removeItem("user");

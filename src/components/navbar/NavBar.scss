@@ -1,49 +1,128 @@
+@use "../../assets/partials/global";
+@use "../../assets/partials/typography" as *;
+@use "../../assets/partials/fonts" as *;
+@use "../../assets/partials/variables" as *;
+@use "../../assets/partials/mixins" as *;
+
 .navbar {
+    background-color: $StoryWave-LightBrown;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: #f8f8f8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 
-    &__logo img {
-        height: 50px;
+    &:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.navbar__logo img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.navbar__menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navbar__item {
+    padding: 0.8rem 1.4rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: $StoryWave-Beige;
+    color: $StoryWave-Brown;
+    border-radius: 8px;
+    height: 3.5rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        background-color: $StoryWave-Orange;
+        color: white;
+        transform: scale(1.05);
     }
 
-    &__menu {
+    &:active {
+        transform: scale(1);
+    }
+}
+
+.navbar__dropdown {
+    position: relative;
+
+    .navbar__link {
+        cursor: pointer;
+        all: unset;
+        font-weight: 600;
+        color: $StoryWave-Brown;
         display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+        align-items: center;
+    }
 
-        &__item {
-            margin-left: 1rem;
-        }
+    .navbar__dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $StoryWave-LightBrown;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.8rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        min-width: 220px;
 
-        .navbar__dropdown {
-            position: relative;
+        li {
+            padding: 0.8rem 1.5rem;
+            text-align: left;
 
-            .navbar__dropdown-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background-color: white;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                list-style: none;
-                margin: 0;
-                padding: 0;
+            .navbar__dropdown-link {
+                color: $StoryWave-Brown;
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: 500;
+                display: block;
+                transition: background-color 0.3s ease;
 
-                .navbar__dropdown-link {
-                    display: block;
-                    padding: 0.5rem 1rem;
-                    color: #333;
-                    text-decoration: none;
-
-                    &:hover {
-                        background-color: #f0f0f0;
-                    }
+                &:hover {
+                    background-color: $StoryWave-Orange;
+                    color: white;
+                    padding-left: 1rem;
                 }
             }
         }
     }
 }
+
+.navbar__dropdown-menu li button {
+    background: none;
+    border: none;
+    color: $StoryWave-Brown;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 500;
+    list-style: none;
+
+    &:hover {
+        background-color: $StoryWave-Orange;
+        color: white;
+    }
+}
+
+.navbar__item:not(:last-child) {
+    border-right: 2px solid $StoryWave-Brown;
+    padding-right: 1.5rem;
+}
+
