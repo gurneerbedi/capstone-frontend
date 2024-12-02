@@ -5,6 +5,7 @@
 @use "../../assets/partials/mixins" as *;
 
 .navbar {
+    
     background-color: $StoryWave-LightBrown;
     padding: 1rem 2rem;
     display: flex;
@@ -16,12 +17,19 @@
     &:hover {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
+  
 }
 
 .navbar__logo img {
+    width: 5.625rem;
+    height: auto;
+
+    @include tablet{
     width: 120px;
     height: auto;
     object-fit: contain;
+    }
+    
 }
 
 .navbar__menu {
@@ -32,19 +40,25 @@
 }
 
 .navbar__item {
-    padding: 0.8rem 1.4rem;
+     padding: 0.8rem 1.4rem;
     font-size: 1.1rem;
     font-weight: 600;
     background-color: $StoryWave-Beige;
     color: $StoryWave-Brown;
     border-radius: 8px;
-    height: 3.5rem;
-    width: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+
+    @include tablet{
+    
+    height: 3.5rem;
+    width: 10rem;
+   
+    }
+   
 
     &:hover {
         background-color: $StoryWave-Orange;
@@ -67,6 +81,7 @@
         color: $StoryWave-Brown;
         display: flex;
         align-items: center;
+        text-decoration: none;
     }
 
     .navbar__dropdown-menu {

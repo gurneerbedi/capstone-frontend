@@ -11,17 +11,22 @@ body {
 .homepage {
     &__header {
         background-color: rgba(246, 240, 234, 1);
-        padding: 4rem 2rem;
+        padding: 2rem 2rem;
         text-align: center;
     }
 
     &__slogan {
-        font-size: 33px;
-        line-height: 44px;
-        font-weight: 700;
+        // font-size: 33px;
+        // line-height: 44px;
+        // font-weight: 700;
         margin: 0 0 2rem;
         color: $StoryWave-LightBrown;
         animation: fadeIn 1.5s ease-out;
+        @include mobile__page-header;
+
+        @include tablet{
+            @include page-header;
+        }
     }
 
     &__carousel {
@@ -40,9 +45,10 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $StoryWave-Brown;
+        //background-color: $StoryWave-LightBrown;
     }
     &__hero-video {
-        height: 65vh;
+        width: 100%;
+        height: auto;
     }
 }
