@@ -4,4 +4,4 @@
 2. Install dependencies: `npm install`
 
 ## Run
-- Start: `npm run dev'
+- Start: `npm run dev`
