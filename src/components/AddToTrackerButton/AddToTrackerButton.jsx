@@ -1,17 +1,20 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import "./AddToTrackerButton.scss";
 
 const AddToTrackerButton = ({ book, user }) => {
-    const [error, setError] = useState(null);
+    const [message, setMessage] = useState(null);
+    const [messageType, setMessageType] = useState("");
     const [loading, setLoading] = useState(false);
 
     const handleAddToTracker = async () => {
         if (!user) {
-            setError("Please log in to add books to your tracker.");
+            setMessage("Please log in to add books to your tracker.");
+            setMessageType("error");
             return;
         }
 
         setLoading(true);
-        setError(null);
+        setMessage(null);
 
         try {
             const response = await fetch("/api/reading-tracker", {
@@ -21,31 +24,43 @@ const AddToTrackerButton = ({ book, user }) => {
                     Authorization: `Bearer ${user.token}`,
                 },
                 body: JSON.stringify({
-                    title: book.title,
-                    author: book.author,
+                    title: book.Title,
+                    author: book.Author,
+                    description: book.Description,
                 }),
             });
 
             if (response.ok) {
-                alert("Book added to tracker!");
+                setMessage("Book successfully added to your tracker!");
+                setMessageType("success");
             } else {
                 const errorData = await response.json();
-                setError(`Failed to add book: ${errorData.error}`);
+                setMessage(`Failed to add book: ${errorData.error}`);
+                setMessageType("error");
             }
         } catch (err) {
             console.error("Error adding book to tracker:", err);
-            setError("An error occurred while adding the book.");
+            setMessage("An error occurred while adding the book.");
+            setMessageType("error");
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <div>
-            <button onClick={handleAddToTracker} disabled={loading}>
-                {loading ? "Adding..." : "Add to Tracker"}
+        <div className="tracker-button-container">
+            <button
+                onClick={handleAddToTracker}
+                disabled={loading}
+                className={`tracker-button ${loading ? "disabled" : ""}`}
+            >
+                {loading ? "Adding..." : "Want to Read"}
             </button>
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            {message && (
+                <div className={`tracker-message ${messageType}`}>
+                    {message}
+                </div>
+            )}
         </div>
     );
 };

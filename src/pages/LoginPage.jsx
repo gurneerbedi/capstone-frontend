@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa"; 
 
 import "./LoginPage.scss";
+import NavBar from "../components/navbar/NavBar";
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
@@ -46,6 +47,7 @@ const LoginPage = () => {
 
     return (
         <div className="login-container">
+            <NavBar></NavBar>
             <div className="login-page">
                 <h2 className="login-page__title">
                     {isLogin ? "WELCOME BACK!" : "Sign Up"}
