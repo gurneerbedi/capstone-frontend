@@ -9,23 +9,23 @@ body {
 }
 
 .discover-container {
-  padding: 20px;
-  text-align: center;
+    padding: 20px;
+    text-align: center;
 
-  &-heading h2 {
-    @include mobile__page-header;
-    @include tablet{
-    @include page-header;
+    &-heading h2 {
+        @include mobile__page-header;
+        @include tablet {
+            @include page-header;
+        }
+
+        color: $StoryWave-Brown;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        background: linear-gradient(90deg, $StoryWave-Orange, $StoryWave-Red);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 2px;
     }
-    
-    color: $StoryWave-Brown;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, $StoryWave-Orange, $StoryWave-Red);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 2px;
-  }
 }
 
 .mood-cards {
@@ -123,4 +123,3 @@ body {
     color: $StoryWave-Brown;
     line-height: 1.4;
 }
-

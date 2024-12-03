@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Abstractbackground from "../assets/images/abstract2.jpg";
 import axios from "axios";
-import NavBar from "../components/navbar/NavBar"
+import NavBar from "../components/navbar/NavBar";
 import AddToTrackerButton from "../components/AddToTrackerButton/AddToTrackerButton";
 import {
     FaHeart,
@@ -22,49 +22,42 @@ const moods = [
         name: "Romantic",
         icon: <FaHeart />,
         description: "Fall in love with these stories.",
-       
     },
     {
         name: "Happy",
         icon: <FaSmile />,
         description: "Books that lift your spirits.",
-        
     },
     {
         name: "Sad",
         icon: <FaSadTear />,
         description: "Heart-wrenching tales that tug at your emotions.",
-        
     },
     {
         name: "Adventurous",
         icon: <FaMapMarkedAlt />,
         description: "For the explorers at heart.",
-        
     },
     {
-        name: "Inspired",
+        name: "Inspirational",
         icon: <FaLightbulb />,
         description: "Books that spark creativity and new ideas.",
-        
     },
     {
-        name: "Calm",
+        name: "Calming",
         icon: <FaLeaf />,
         description: "Relax with peaceful, serene stories.",
-       
     },
     {
         name: "Funny",
         icon: <FaLaugh />,
-        description: "Relax with peaceful, serene stories.",
-       
+        description: "Dive into stories that will have you laughing out loud.",
     },
     {
         name: "Magical",
         icon: <FaHatWizard />,
-        description: "Relax with peaceful, serene stories.",
-        
+        description:
+            "Lose yourself in tales of wonder, spells, and extraordinary worlds.",
     },
 ];
 
@@ -121,14 +114,14 @@ const DiscoverPage = () => {
                     </div>
                 ))}
             </div>
-            <div className = "button-container">
-            <button
-                className="find-books-button"
-                onClick={handleSubmit}
-                disabled={selectedMoods.length === 0}
-            >
-                Find Books
-            </button>
+            <div className="button-container">
+                <button
+                    className="find-books-button"
+                    onClick={handleSubmit}
+                    disabled={selectedMoods.length === 0}
+                >
+                    Find Books
+                </button>
             </div>
         </div>
     );
