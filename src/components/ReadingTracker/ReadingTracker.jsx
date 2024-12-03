@@ -52,6 +52,7 @@ const ReadingTracker = ({ user }) => {
                     }),
                 }
             );
+            console.log("response for marking as complete:", response);
 
             if (!response.ok) {
                 const errorData = await response.json();
@@ -68,6 +69,9 @@ const ReadingTracker = ({ user }) => {
             setError("Error marking book as completed");
         }
     };
+    <button onClick={() => handleMarkAsCompleted(book.id)}>
+        Mark as Completed
+    </button>;
 
     const handleRemoveBook = async (bookId) => {
         try {
