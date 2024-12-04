@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ReadingTracker.scss";
-import NavBar from "../navbar/NavBar"
+import NavBar from "../navbar/NavBar";
 
 const ReadingTracker = ({ user }) => {
     const [trackerBooks, setTrackerBooks] = useState([]);
@@ -39,19 +39,16 @@ const ReadingTracker = ({ user }) => {
 
     const handleMarkAsCompleted = async (bookId) => {
         try {
-            const response = await fetch(
-                `/api/reading-tracker/complete`,
-                {
-                    method: "PATCH",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${user.token}`,
-                    },
-                    body: JSON.stringify({
-                        bookId,
-                    }),
-                }
-            );
+            const response = await fetch(`/api/reading-tracker/complete`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${user.token}`,
+                },
+                body: JSON.stringify({
+                    bookId,
+                }),
+            });
             console.log("response for marking as complete:", response);
 
             if (!response.ok) {
@@ -59,7 +56,7 @@ const ReadingTracker = ({ user }) => {
                 setError(errorData.error || "Failed to mark as completed");
                 return;
             }
-            
+
             setTrackerBooks((prevBooks) =>
                 prevBooks.map((book) =>
                     book.id === bookId ? { ...book, status: "completed" } : book
@@ -105,7 +102,7 @@ const ReadingTracker = ({ user }) => {
 
     return (
         <div className="reading-list-page">
-            <NavBar/>
+            <NavBar />
             <div className="reading-tracker">
                 <h1 className="reading-tracker__title">Your Reading Tracker</h1>
                 {error && <p className="reading-tracker__error">{error}</p>}

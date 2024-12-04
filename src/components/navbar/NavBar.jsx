@@ -27,9 +27,15 @@ const NavBar = () => {
             </div>
             <ul className="navbar__menu">
                 <li className="navbar__item">
-                    <Link to="/discover" className="navbar__link">
+                    <button
+                        className="navbar__discover"
+                        onClick={() => navigate("/discover")}
+                    >
                         Discover
-                    </Link>
+                    </button>
+                    {/* <Link to="/discover" className="navbar__link">
+                        Discover
+                    </Link> */}
                 </li>
                 {!user ? (
                     <li className="navbar__item">
