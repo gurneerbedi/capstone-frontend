@@ -59,19 +59,22 @@ const ReadingTracker = ({ user }) => {
                 setError(errorData.error || "Failed to mark as completed");
                 return;
             }
-
+            
             setTrackerBooks((prevBooks) =>
                 prevBooks.map((book) =>
                     book.id === bookId ? { ...book, status: "completed" } : book
                 )
             );
+            setTrackerBooks((prevBooks) =>
+                prevBooks.filter((book) => book.id !== bookId)
+            );
         } catch (err) {
             setError("Error marking book as completed");
         }
     };
-    <button onClick={() => handleMarkAsCompleted(book.id)}>
-        Mark as Completed
-    </button>;
+    // <button onClick={() => handleMarkAsCompleted(book.id)}>
+    //     Mark as Completed
+    // </button>;
 
     const handleRemoveBook = async (bookId) => {
         try {
