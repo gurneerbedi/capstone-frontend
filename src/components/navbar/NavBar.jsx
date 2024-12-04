@@ -38,11 +38,12 @@ const NavBar = () => {
                     </Link> */}
                 </li>
                 {!user ? (
-                    <li className="navbar__item">
-                        <Link to="/login" className="navbar__link">
-                            Login / Sign Up
-                        </Link>
-                    </li>
+                    <button
+                        className="navbar__item"
+                        onClick={() => navigate("/login")}
+                    >
+                        Login
+                    </button>
                 ) : (
                     <li className="navbar__item navbar__dropdown">
                         <button
